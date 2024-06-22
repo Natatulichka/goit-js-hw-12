@@ -6,6 +6,7 @@
 */
 
 @import url('./reset.css');
+@import url(./loader.css);
 @import 'simplelightbox/dist/simple-lightbox.min.css';
 @import 'izitoast/dist/css/iziToast.min.css';
 @import 'modern-normalize/modern-normalize.css';
@@ -101,7 +102,7 @@
   text-align: center;
 }
 
-.js-loader-btn {
+.js-load-btn {
   display: block;
   margin: 32px auto 44px auto;
   transform: translateX(-50%);
@@ -122,8 +123,8 @@
   cursor: pointer;
   transition: background-color 300ms linear;
 }
-.js-loader-btn:hover,
-.js-loader-btn:focus {
+.js-load-btn:hover,
+.js-load-btn:focus {
   background-color: #6c8cff;
 }
 

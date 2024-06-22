@@ -14,11 +14,11 @@ function galleryItems(arr) {
       }) => {
         return `
         <li class="gallery-item">
-      <a class="gallery-link" href="${largeImageURL}" ></a> 
+      <a class="gallery-link" href="${largeImageURL}" >
         <img
           src="${webformatURL}"
           alt="${tags}" loading='lazy'width = "360" height = "152"
-        />
+        /></a> 
       <div class="info">
       <p class="info-item"><b>likes:</b>"${likes}"</p>
       <p class="info-item"><b>Views:</b>"${views}"</p>
