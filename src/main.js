@@ -56,7 +56,7 @@ async function onSearchForm(e) {
     const markup = galleryItems(data.hits);
     gallery.innerHTML = markup;
   } catch (err) {
-    showError(err);
+    showError('Something went wrong...');
   }
   hideLoader();
   updateBtnStatus();
@@ -78,6 +78,7 @@ async function onLoadMoreBtn() {
   }
   hideLoader();
   updateBtnStatus();
+  form.reset();
 }
 
 // ===========================
