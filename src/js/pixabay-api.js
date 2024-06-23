@@ -1,20 +1,16 @@
 import axios from 'axios';
 
-const hitsApi = axios.create({
-  baseURL: 'https://pixabay.com',
-});
-
-export async function getQuery(value, page) {
-  const params = {
+export async function getQuery(value, page, perPage) {
+  const params = new URLSearchParams({
     key: '44351431-da99bbc5aa576d6c36cc46a59',
     q: value,
     image_type: 'photo',
     orientation: 'horizontal',
     safesearch: 'true',
-    per_page: 20,
+    per_page: perPage,
     page: page,
-  };
+  });
 
-  const res = await hitsApi.get('/api', { params });
+  const res = await axios.get(`https://pixabay.com/api/?${params}`);
   return res.data;
 }

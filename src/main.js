@@ -42,7 +42,7 @@ async function onSearchForm(e) {
   showLoader();
   hideLoadBtn();
   try {
-    const data = await getQuery(query, page);
+    const data = await getQuery(query, page, perPage);
     totalPages = Math.ceil(data.totalHits / perPage);
 
     if (totalPages === 0) {
@@ -68,13 +68,13 @@ async function onLoadMoreBtn() {
   hideLoadBtn();
   showLoader();
   try {
-    const data = await getQuery(query, page);
+    const data = await getQuery(query, page, perPage);
     const markup = galleryItems(data.hits);
     gallery.insertAdjacentHTML('beforeend', markup);
     lightbox.refresh();
     skipOldElement();
   } catch {
-    console.log('error');
+    showError('Something went wrong...');
   }
   hideLoader();
   updateBtnStatus();
