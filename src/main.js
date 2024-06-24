@@ -55,6 +55,7 @@ async function onSearchForm(e) {
     }
     const markup = galleryItems(data.hits);
     gallery.innerHTML = markup;
+    lightbox.refresh();
   } catch (err) {
     showError('Something went wrong...');
   }
